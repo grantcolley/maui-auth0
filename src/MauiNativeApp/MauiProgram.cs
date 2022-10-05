@@ -1,4 +1,7 @@
-﻿namespace MauiNativeApp
+﻿using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
+
+namespace MauiNativeApp
 {
     public static class MauiProgram
     {
