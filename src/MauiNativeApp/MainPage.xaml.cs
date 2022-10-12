@@ -33,6 +33,21 @@ namespace MauiNativeApp
             }
         }
 
+        private async void OnLogoutClicked(object sender, EventArgs e)
+        {
+            var logoutResult = await auth0Client.LogoutAsync();
+
+            if (!logoutResult.IsError)
+            {
+                HomeView.IsVisible = false;
+                LoginView.IsVisible = true;
+            }
+            else
+            {
+                await DisplayAlert("Error", logoutResult.ErrorDescription, "OK");
+            }
+        }
+
         private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
