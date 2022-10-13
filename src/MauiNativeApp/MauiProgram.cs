@@ -20,12 +20,16 @@ namespace MauiNativeApp
 
             builder.Services.AddSingleton<MainPage>();
 
-            builder.Services.AddSingleton(new Auth0Client(new()
+            builder.Services.AddSingleton(new Auth0Client(new Auth0ClientOptions
             {
                 Domain = "<YOUR_AUTH0_DOMAIN>",
                 ClientId = "<YOUR_CLIENT_ID>",
                 Scope = "openid profile",
-                RedirectUri = "myapp://callback"
+
+                // https://github.com/dotnet/maui/issues/8382
+                RedirectUri = "http://localhost/callback"
+                // RedirectUri = "myapp://callback"
+
             }));
 
             return builder.Build();

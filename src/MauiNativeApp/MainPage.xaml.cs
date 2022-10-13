@@ -16,6 +16,10 @@ namespace MauiNativeApp
             InitializeComponent();
 
             auth0Client = client;
+
+            // https://github.com/dotnet/maui/issues/8382
+            auth0Client.Browser = new WebViewBrowserAuthenticator(WebViewInstance);
+
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

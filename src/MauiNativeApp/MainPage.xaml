@@ -9,16 +9,20 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <StackLayout
+            <StackLayout 
                 x:Name="LoginView">
+                
                 <Button 
                     x:Name="LoginBtn"
                     Text="Log In"
                     SemanticProperties.Hint="Click to log in"
                     Clicked="OnLoginClicked"
                     HorizontalOptions="Center" />
+
+                <WebView x:Name="WebViewInstance" />
+                
             </StackLayout>
-                       
+
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">
