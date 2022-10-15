@@ -27,8 +27,9 @@ namespace MauiNativeApp
                 Scope = "openid profile",
 
                 // https://github.com/dotnet/maui/issues/8382
-                RedirectUri = "http://localhost/callback"
-                // RedirectUri = "myapp://callback"
+                // RedirectUri = "http://localhost/callback"
+                
+                RedirectUri = "myapp://callback"
 
             }));
 
