@@ -18,7 +18,7 @@ namespace MauiNativeApp
             auth0Client = client;
 
             // https://github.com/dotnet/maui/issues/8382
-            auth0Client.Browser = new WebViewBrowserAuthenticator(WebViewInstance);
+            // auth0Client.Browser = new WebViewBrowserAuthenticator(WebViewInstance);
 
         }
 
