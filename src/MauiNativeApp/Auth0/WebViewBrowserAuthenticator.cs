@@ -1,46 +1,48 @@
-﻿using IdentityModel.OidcClient.Browser;
-using Microsoft.Maui.Controls;
-using System.Threading.Tasks;
-using System.Threading;
+﻿// https://auth0.com/blog/add-authentication-to-dotnet-maui-apps-with-auth0
 
-namespace MauiNativeApp.Auth0
-{
-    public class WebViewBrowserAuthenticator : IdentityModel.OidcClient.Browser.IBrowser
-    {
-        private readonly WebView _webView;
+//using IdentityModel.OidcClient.Browser;
+//using Microsoft.Maui.Controls;
+//using System.Threading.Tasks;
+//using System.Threading;
 
-        public WebViewBrowserAuthenticator(WebView webView)
-        {
-            _webView = webView;
-        }
+//namespace MauiNativeApp.Auth0
+//{
+//    public class WebViewBrowserAuthenticator : IdentityModel.OidcClient.Browser.IBrowser
+//    {
+//        private readonly WebView _webView;
 
-        public async Task<BrowserResult> InvokeAsync(BrowserOptions options, CancellationToken cancellationToken = default)
-        {
-            var tcs = new TaskCompletionSource<BrowserResult>();
+//        public WebViewBrowserAuthenticator(WebView webView)
+//        {
+//            _webView = webView;
+//        }
 
-            _webView.Navigated += (sender, e) =>
-            {
-                if (e.Url.StartsWith(options.EndUrl))
-                {
-                    _webView.WidthRequest = 0;
-                    _webView.HeightRequest = 0;
-                    if (tcs.Task.Status != TaskStatus.RanToCompletion)
-                    {
-                        tcs.SetResult(new BrowserResult
-                        {
-                            ResultType = BrowserResultType.Success,
-                            Response = e.Url.ToString()
-                        });
-                    }
-                }
+//        public async Task<BrowserResult> InvokeAsync(BrowserOptions options, CancellationToken cancellationToken = default)
+//        {
+//            var tcs = new TaskCompletionSource<BrowserResult>();
 
-            };
+//            _webView.Navigated += (sender, e) =>
+//            {
+//                if (e.Url.StartsWith(options.EndUrl))
+//                {
+//                    _webView.WidthRequest = 0;
+//                    _webView.HeightRequest = 0;
+//                    if (tcs.Task.Status != TaskStatus.RanToCompletion)
+//                    {
+//                        tcs.SetResult(new BrowserResult
+//                        {
+//                            ResultType = BrowserResultType.Success,
+//                            Response = e.Url.ToString()
+//                        });
+//                    }
+//                }
 
-            _webView.WidthRequest = 600;
-            _webView.HeightRequest = 600;
-            _webView.Source = new UrlWebViewSource { Url = options.StartUrl };
+//            };
 
-            return await tcs.Task;
-        }
-    }
-}
+//            _webView.WidthRequest = 600;
+//            _webView.HeightRequest = 600;
+//            _webView.Source = new UrlWebViewSource { Url = options.StartUrl };
+
+//            return await tcs.Task;
+//        }
+//    }
+//}
