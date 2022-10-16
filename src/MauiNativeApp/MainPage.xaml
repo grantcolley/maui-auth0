@@ -53,6 +53,11 @@
                     Clicked="OnCounterClicked"
                     HorizontalOptions="Center" />
 
+                <Label
+                    x:Name="lblUser"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+
                 <Button 
                     x:Name="LogoutBtn"
                     Margin="0,5,0,0"
