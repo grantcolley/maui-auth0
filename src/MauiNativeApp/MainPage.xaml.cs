@@ -28,6 +28,7 @@ namespace MauiNativeApp
 
             if (!loginResult.IsError)
             {
+                lblUser.Text = loginResult.User.Identity.Name;
                 LoginView.IsVisible = false;
                 HomeView.IsVisible = true;
             }
@@ -43,6 +44,7 @@ namespace MauiNativeApp
 
             if (!logoutResult.IsError)
             {
+                lblUser.Text = string.Empty;
                 HomeView.IsVisible = false;
                 LoginView.IsVisible = true;
             }
