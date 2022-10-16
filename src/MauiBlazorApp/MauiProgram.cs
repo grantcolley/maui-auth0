@@ -26,11 +26,9 @@ public static class MauiProgram
 
         builder.Services.AddSingleton(new Auth0Client(new Auth0ClientOptions
         {
-            //Domain = "<YOUR_AUTH0_DOMAIN>",
-            //ClientId = "<YOUR_CLIENT_ID>",
-            Domain = "dev-g5zonud4.us.auth0.com",
-            ClientId = "B85e445eAgYRUnrC7c7XaAXLCeMNyfLQ",
-            Scope = "openid profile",
+			Domain = "<YOUR_AUTH0_DOMAIN>",
+			ClientId = "<YOUR_CLIENT_ID>",
+			Scope = "openid profile",
 
             // https://github.com/dotnet/maui/issues/8382
             // RedirectUri = "http://localhost/callback"
